@@ -22,5 +22,5 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
      const chatId = msg.chat.id;
    
      // send a message to the chat acknowledging receipt of their message
-     bot.sendMessage(chatId, resp, 'Received your message');
+     bot.sendMessage(chatId, 'Received your message');
    });
