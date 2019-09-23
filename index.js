@@ -11,5 +11,6 @@ var bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/echo (.+)/, function (msg, match) {
     var chatId = msg.from.id; // Получаем ID отправителя
     var resp = match[1]; // Получаем текст после /echo
-    bot.sendMessage(chatId, resp);
+    var answer = 'uuuuuu'
+    bot.sendMessage(chatId, answer, resp);
 });
