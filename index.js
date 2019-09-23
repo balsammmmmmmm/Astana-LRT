@@ -8,12 +8,6 @@ var token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 var bot = new TelegramBot(token, { polling: true });
 
 // Написать мне ... (/echo Hello World! - пришлет сообщение с этим приветствием, то есть "Hello World!")
-bot.onText(/\/echo (.+)/, function (msg, match) {
-    var chatId = msg.chat.id; // Получаем ID отправителя
-    var resp = match[1]; // Получаем текст после /echo
-    bot.sendMessage(chatId, resp);
-});
-
 bot.on('message', (msg, match) =>{
      var chatId = msg.chat.id;
      var resp = match[1];
