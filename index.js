@@ -11,7 +11,7 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/echo (.+)/, function(msg, match) {
      const chatId = msg.chat.id;
      const resp = match[1];
-     const curTime =new date().getDate() + '.' + new date().getMonth(+1) + '.' +  new date().getFullYear() + ' ' +  new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds();
+     const curTime = new date().getDate() + '.' + new date().getMonth(+1) + '.' +  new date().getFullYear() + ' ' +  new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds();
      bot.sendMessage(chatId, 
      `БИЛЕТ: 0078:38:2418 
      СУММА: 90 ТГ.
