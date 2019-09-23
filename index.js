@@ -1,4 +1,5 @@
 // Подключаем библиотеку для работы с Telegram API в переменную
+process.env.NTBA_FIX_319 = 1;
 const TelegramBot = require('node-telegram-bot-api');
 
 // Устанавливаем токен, который выдавал нам бот
