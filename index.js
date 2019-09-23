@@ -11,7 +11,7 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/echo (.+)/, function(msg, match) {
      const chatId = msg.chat.id;
      const resp = match[1];
-     const curTime = new date().getDate() + '.' + new date().getMonth(+1) + '.' +  new date().getFullYear() + ' ' +  new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
+     //const curTime = new date().getDate() + '.' + new date().getMonth(+1) + '.' +  new date().getFullYear() + ' ' +  new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
      bot.sendMessage(chatId, `БИЛЕТ: 0078:38:2418     СУММА: 90 ТГ.Дата: ${curTime}Транспорт: ${resp}ТЕЛ: 77769097977ТРАНЗАКЦИЯ: 338536200ТОО АСТАНА LRThttps://smsbus.kz/cd.jsp?id=0078382418`);
      
 })
