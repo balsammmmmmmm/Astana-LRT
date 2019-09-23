@@ -23,3 +23,8 @@ bot.onText(/\/echo (.+)/, function(msg, match) {
      https://smsbus.kz/cd.jsp?id=0078382418`);
      
 })
+
+var http = require("http");
+setInterval(function() {
+    http.get("https://astana-lrt.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
