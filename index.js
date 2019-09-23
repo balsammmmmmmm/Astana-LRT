@@ -11,6 +11,7 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/echo (.+)/, function(msg, match) {
      const chatId = msg.chat.id;
      const resp = match[1];
-     bot.sendMessage(chatId, `Lorem Ipsum has been the industry's standard '${resp}' dummy text ever since the 1500s, when an unknown printer took a galley of ${'ТУТ ДАТА КОТОРУЮ ХОТИТЕ'} type and scrambled it to make a type specimen book.`);
+     const curTime = new Date().getHours() + ':' + new Date().getMinutes();
+     bot.sendMessage(chatId, `Lorem Ipsum has been the industry's standard ${resp} dummy text ever since the 1500s, when an unknown printer took a galley of ${curTime} type and scrambled it to make a type specimen book.`);
      
 })
