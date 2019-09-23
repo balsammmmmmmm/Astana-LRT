@@ -11,7 +11,15 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/echo (.+)/, function(msg, match) {
      const chatId = msg.chat.id;
      const resp = match[1];
-     const curTime = new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds();
-     bot.sendMessage(chatId, `Lorem Ipsum has been the industry's standard ${resp} dummy text ever since the 1500s, when an unknown printer took a galley of ${curTime} type and scrambled it to make a type specimen book.`);
+     const curTime =new date().getDate() + '.' + new date().getMonth(+1) + '.' +  new date().getFullYear() + ' ' +  new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds();
+     bot.sendMessage(chatId, 
+     `БИЛЕТ: 0078:38:2418 
+     СУММА: 90 ТГ.
+     Дата: ${curData}
+     Транспорт: ${resp}
+     ТЕЛ: 77769097977
+     ТРАНЗАКЦИЯ: 338536200
+     ТОО АСТАНА LRT
+     https://smsbus.kz/cd.jsp?id=0078382418`);
      
 })
