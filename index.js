@@ -21,9 +21,9 @@ const bot = new TelegramBot(token, {polling: true});
    // messages.
    bot.on('message', (msg, match) => {
      const chatId = msg.chat.id;
-     const resp = match[1];
+     const resp = msg;
      const curDate = new Date().getHours() + ':' + new Date().getMinutes();
 
      // send a message to the chat acknowledging receipt of their message
-     bot.sendMessage(chatId, resp, curDate);
+     bot.sendMessage(chatId, msg, curDate);
    });
