@@ -17,6 +17,6 @@ bot.onText(/\/echo (.+)/, function (msg, match) {
 bot.on('message', (msg, match) =>{
      var chatId = msg.chat.id;
      var resp = match[1];
-     bot.sendMessage(chatId, `Lorem Ipsum has been the industry's standard ${resp} dummy text ever since the 1500s, when an unknown printer took a galley of ${'ТУТ ДАТА КОТОРУЮ ХОТИТЕ'} type and scrambled it to make a type specimen book.`);
+     bot.sendMessage(chatId, `Lorem Ipsum has been the industry's standard "${resp}" dummy text ever since the 1500s, when an unknown printer took a galley of ${'ТУТ ДАТА КОТОРУЮ ХОТИТЕ'} type and scrambled it to make a type specimen book.`);
      
 })
