@@ -13,7 +13,7 @@ bot.onText(/\/echo (.+)/, function(msg, match) {
      const resp = match[1];
      const curTime = new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds();
      bot.sendMessage(chatId, 
-     `БИЛЕТ: 0078:38:2418 
+     `БИЛЕТ: 0078:38:2418√<br \/>
      СУММА: 90 ТГ.
      Дата: ${curTime}
      Транспорт: ${resp}
