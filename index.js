@@ -11,9 +11,10 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
    
      const chatId = msg.chat.id;
      const resp = match[1]; // the captured "whatever"
+     const curDate = new Date().getHours() + ':' + new Date().getMinutes();
    
      // send back the matched "whatever" to the chat
-     bot.sendMessage(chatId, resp);
+     bot.sendMessage(chatId, resp, curDate);
    });
    
    // Listen for any kind of message. There are different kinds of
