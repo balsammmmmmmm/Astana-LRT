@@ -59,6 +59,6 @@ https://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
 
 bot.onText(/\/balance (.+)/, function(msg) {
     const chatId = msg.chat.id;
-    const randomThird = Math.floor(Math.random()*(999-100+1)+100);
-    bot.sendMessage(chatId, 'Баланс = ${randomThird}');
+    const balance = Math.floor(Math.random()*(999-100+1)+100);
+    bot.sendMessage(chatId, `Баланс = ${balance}`);
 });
