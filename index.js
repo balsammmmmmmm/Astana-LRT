@@ -43,15 +43,16 @@ bot.onText(/\/echo (.+)/, function(msg, match) {
          const chatId = msg.chat.id;
          const resp = match[1];
          const curTime = new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds();
-         const random = Math.floor(1000 + Math.random() * 9000);
+         const randomFirst = Math.floor(1000 + Math.random() * 9000);
+         const randomSecond = Math.floor(1000 + Math.random() * 9000);
          
          bot.sendMessage(chatId,
-            `БИЛЕТ: 0078:38:${random}
+            `БИЛЕТ: ${randomFirst}:38:${randomSecond}
 СУММА: 90 ТГ.
 Дата: ${curTime}
 Транспорт: ${resp}
 ТЕЛ: 77769097977
-ТРАНЗАКЦИЯ: 33853${random}
+ТРАНЗАКЦИЯ: 33853${randomSecond}
 ТОО АСТАНА LRT
-https://smsbus.kz/cd.jsp?id=007838${random}`);
+https://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
          });
