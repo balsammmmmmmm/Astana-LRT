@@ -45,11 +45,13 @@ bot.onText(/\/echo (.+)/, function(msg, match) {
          const curTime = new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds();
          const randomFirst = Math.floor(1000 + Math.random() * 9000);
          const randomSecond = Math.floor(1000 + Math.random() * 9000);
-         
+         const d1 = new Date('2017-03-11T11:30:00');
+         d1.toString(); // "Sat Mar 11 11:30:00 UTC+0900 2017"
+
          bot.sendMessage(chatId,
             `БИЛЕТ: ${randomFirst}:38:${randomSecond}
 СУММА: 90 ТГ.
-Дата: ${curTime}
+Дата: ${d1} ${curTime}
 Транспорт: ${resp}
 ТЕЛ: 77769097977
 ТРАНЗАКЦИЯ: 33853${randomSecond}
