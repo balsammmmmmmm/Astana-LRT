@@ -47,9 +47,9 @@ bot.onText(/\/echo (.+)/, function(msg, match) {
          const curTime = new Date('2017-03-11T11:30:00');
 
          bot.sendMessage(chatId,
-            `БИЛЕТ: ${randomFirst}:38:${randomSecond}
+`БИЛЕТ: ${randomFirst}:38:${randomSecond}
 СУММА: 90 ТГ.
-Дата: ${d1}
+Дата: ${curTime}
 Транспорт: ${resp}
 ТЕЛ: 77769097977
 ТРАНЗАКЦИЯ: 33853${randomSecond}
