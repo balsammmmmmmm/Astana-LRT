@@ -11,7 +11,7 @@ bot.onText(/\/echo (.+)/, function(msg, match) {
          const resp = match[1];
          const randomFirst = Math.floor(1000 + Math.random() * 9000);
          const randomSecond = Math.floor(1000 + Math.random() * 9000);
-         const curTime = new Date('2017-03-11T11:30:00-06:00');
+         const curTime = new Date('2017-03-11T11:30:00-09:00');
 
          bot.sendMessage(chatId,
 `БИЛЕТ: ${randomFirst}:38:${randomSecond}
