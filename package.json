@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "moment-timezone": "^0.5.26",
     "node-telegram-bot-api": "^0.30.0",
     "telegraf": "^3.32.0"
   }
