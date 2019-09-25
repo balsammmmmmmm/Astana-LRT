@@ -6,6 +6,19 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
 
+const echo = '/echo';
+var options = {
+  reply_markup: JSON.stringify({
+    inline_keyboard: [
+      [{ text: '/echo', callback_data: '${echo}' }]
+    ]
+  })
+};
+
+bot.onText(/\/start_test/, function (msg, match) {
+  bot.sendMessage(msg.chat.id, 'Выберите любую кнопку:', options);
+});
+
 bot.onText(/\/echo (.+)/, function(msg, match) {
          const chatId = msg.chat.id;
          const resp = match[1];
