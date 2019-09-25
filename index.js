@@ -6,7 +6,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
 
-bot.onText(/\/echo (.+)/, function(msg, match) {
+bot.onText(/\/a (.+)/, function(msg, match) {
          const chatId = msg.chat.id;
          const resp = match[1];
          const randomFirst = Math.floor(1000 + Math.random() * 9000);
