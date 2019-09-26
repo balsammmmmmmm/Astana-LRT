@@ -7,7 +7,7 @@ const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
 
 bot.onText(/\/start (.+)/), function(msg) {
-    bot.sendMessage(msg.chat.id, `Чтобы оплатить напишите /оплата "номер траспорта"`)
+    bot.sendMessage(msg.chat.id, `Чтобы оплатить напишите /оплата "номер траспорта"`);
 };
 bot.onText(/\/оплата (.+)/, function(msg, match) {
          const chatId = msg.chat.id;
