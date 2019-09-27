@@ -11,13 +11,13 @@ bot.onText(/\/start (.+)/), function(msg, match) {
     bot.sendMessage(chatId, `Чтобы оплатить напишите /оплата "номер траспорта"`);
 };
 bot.onText(/\/оплата (.+)/, function(msg, match) {
-         const chatId = msg.chat.id;
+         const fromId = msg.from.id;
          const resp = match[1];
          const randomFirst = Math.floor(1000 + Math.random() * 9000);
          const randomSecond = Math.floor(1000 + Math.random() * 9000);
          const curTime = new Date();
 
-         bot.sendMessage(chatId,
+         bot.sendMessage(fromId,
 `БИЛЕТ: ${randomFirst}:38:${randomSecond}
 СУММА: 90 ТГ.
 Дата: ${curTime}
