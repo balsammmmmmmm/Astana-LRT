@@ -32,7 +32,7 @@ const button = {
         disable_web_page_preview: false,
         reply_markup: JSON.stringify({
         keyboard:  [
-            [{text: 'Понидельник', callback_data: 'mon'}],
+            [{text: 'Понедельник', callback_data: 'mon'}],
             [{text: 'Вторник', callback_data: 'tue'}],
             [{text: 'Среда', callback_data: 'wed'}],                        
             [{text: 'Четверг', callback_data: 'thu'}],
@@ -44,7 +44,7 @@ const button = {
         bot.sendMessage(msg.from.id, `Укажите день недели`, button2);
         });
 
-        bot.onText(/Понидельник/, function(msg, match) {
+        bot.onText(/Понедельник/, function(msg, match) {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, 
 `8:00 - 8:50	Математика 1,'лек' ( Матин Д.Т.), К02. Учебный корпус №2, ФИТ, 222
