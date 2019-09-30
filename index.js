@@ -12,14 +12,20 @@ const button = {
     disable_web_page_preview: false,
     reply_markup: JSON.stringify({
         keyboard: [
-            ['number']
+            ['help']
         ],
         resize_keyboard: true
     })
  };
-    bot.sendMessage(msg.from.id, 'HI', button);
+    bot.sendMessage(msg.from.id, `Hello ${msg.from.id}`, button);
 });
-bot.onText(/number (.+)/, function(msg, match) {
+
+bot.onText(/help/, function(msg, match) {
+    const fromId = msg.from.id;
+    bot.sendMessage(fromId, `Чтобы получить билет просто напиши номер Автобуса`);
+    });
+
+bot.onText(/ (.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
     const randomFirst = Math.floor(1000 + Math.random() * 9000);
