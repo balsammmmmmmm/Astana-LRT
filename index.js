@@ -13,6 +13,7 @@ bot.onText(/\/start (.+)/), function(msg, match) {
 bot.onText(/\/оплата (.+)/, function(msg, match) {
          const fromId = msg.from.id;
          const resp = match[1];
+         const respo = match[2]; 
          const randomFirst = Math.floor(1000 + Math.random() * 9000);
          const randomSecond = Math.floor(1000 + Math.random() * 9000);
          const curTime = new Date();
@@ -21,7 +22,7 @@ bot.onText(/\/оплата (.+)/, function(msg, match) {
 `БИЛЕТ: ${randomFirst}:38:${randomSecond}
 СУММА: 90 ТГ.
 Дата: ${curTime}
-Транспорт: ${resp}
+Транспорт: ${resp}${respo} A${respo}
 ТЕЛ: 77769097977
 ТРАНЗАКЦИЯ: 33853${randomSecond}
 ТОО АСТАНА LRT
