@@ -15,7 +15,7 @@ const button = {
         resize_keyboard: true
     })
  };
-    bot.sendMessage(msg.from.id, button);
+    bot.sendMessage(msg.from.id, 'HI',button);
 });
 bot.onText(/num (.+)/, function(msg, match) {
     const fromId = msg.from.id;
