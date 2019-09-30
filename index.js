@@ -6,10 +6,21 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
 
-bot.onText(/\/start (.+)/, function(msg, match) {
-    const chatId = msg.chat.id;
-    bot.sendMessage(chatId, `Чтобы оплатить напишите /оплата "номер траспорта"`);
+bot.onText(/\/start (.+)/, function(msg) {
+    bot.sendMessage(msg.from.id, `Чтобы оплатить напишите /оплата "номер траспорта"`);
 });
+
+const button = {
+    parse_mode: 'markdown',
+    disable_web_page_preview: false,
+    reply_markup: JSON.stringify({
+        keyboard: [[{text: `Отправить местоположение`, callback_data:'location'},]],
+        resize_keyboard: true
+    })
+ };
+ 
+ app.sendMessage(id, 'text', opt)
+
 bot.onText(/\/оплата (.+)/, function(msg, match) {
          const fromId = msg.from.id;
          const resp = match[1]; 
