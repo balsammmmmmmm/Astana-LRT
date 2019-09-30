@@ -17,28 +17,15 @@ const button = {
  };
     bot.sendMessage(msg.from.id, button);
 });
-bot.onText(/num/, function(msg, match){
-    const auto = match[1];
-    bot.sendMessage(msg.from.id,
-`БИЛЕТ: ${randomFirst}:38:${randomSecond}
-СУММА: 90 ТГ.
-Дата: ${curTime}
-Транспорт: ${resp}
-ТЕЛ: 77769097977
-ТРАНЗАКЦИЯ: 33853${randomSecond}
-ТОО АСТАНА LRT
-https://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}` );
-});
- 
-bot.onText(/\/оплата (.+)/, function(msg, match) {
-         const fromId = msg.from.id;
-         const resp = match[1];
-         const randomFirst = Math.floor(1000 + Math.random() * 9000);
-         const randomSecond = Math.floor(1000 + Math.random() * 9000);
-         const curTime = new Date();
-         curTime.setSeconds(curTime.getSeconds() + 21600);
+bot.onText(/num (.+)/, function(msg, match) {
+    const fromId = msg.from.id;
+    const resp = match[1];
+    const randomFirst = Math.floor(1000 + Math.random() * 9000);
+    const randomSecond = Math.floor(1000 + Math.random() * 9000);
+    const curTime = new Date();
+    curTime.setSeconds(curTime.getSeconds() + 21600);
 
-         bot.sendMessage(fromId,
+    bot.sendMessage(fromId,
 `БИЛЕТ: ${randomFirst}:38:${randomSecond}
 СУММА: 90 ТГ.
 Дата: ${curTime}
@@ -47,4 +34,23 @@ bot.onText(/\/оплата (.+)/, function(msg, match) {
 ТРАНЗАКЦИЯ: 33853${randomSecond}
 ТОО АСТАНА LRT
 https://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
-         });
+    });
+ 
+// bot.onText(/\/оплата (.+)/, function(msg, match) {
+//          const fromId = msg.from.id;
+//          const resp = match[1];
+//          const randomFirst = Math.floor(1000 + Math.random() * 9000);
+//          const randomSecond = Math.floor(1000 + Math.random() * 9000);
+//          const curTime = new Date();
+//          curTime.setSeconds(curTime.getSeconds() + 21600);
+
+//          bot.sendMessage(fromId,
+// `БИЛЕТ: ${randomFirst}:38:${randomSecond}
+// СУММА: 90 ТГ.
+// Дата: ${curTime}
+// Транспорт: ${resp}
+// ТЕЛ: 77769097977
+// ТРАНЗАКЦИЯ: 33853${randomSecond}
+// ТОО АСТАНА LRT
+// https://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
+//          });
