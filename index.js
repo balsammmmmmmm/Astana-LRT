@@ -75,7 +75,6 @@ const button = {
             }
         };
         bot.sendMessage(msg.chat.id, `Укажите день недели`, button);
-        });
 
         bot.onText(/mon/, function(msg, match) {
             const fromId = msg.from.id;
