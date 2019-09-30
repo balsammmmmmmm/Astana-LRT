@@ -26,7 +26,7 @@ const button = {
         bot.sendMessage(fromId, `Чтобы получить билет просто напиши /pay "номер Автобуса"`);
         });
     
-    bot.onText(/schedule/, function(msg, match) {
+    bot.onText(/sch/, function(msg, match) {
         const chatId = msg.chat.id;
         const button = {
             reply_markup: {
