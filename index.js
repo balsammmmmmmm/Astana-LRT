@@ -82,10 +82,31 @@ const button = {
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
 
-            bot.onText(/mon/, function(msg, match) {
+            bot.onText(/tue/, function(msg, match) {
                 const fromId = msg.from.id;
                 bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
                 });
+                
+                bot.onText(/wed/, function(msg, match) {
+                    const fromId = msg.from.id;
+                    bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+                    });
+
+                    bot.onText(/thu/, function(msg, match) {
+                        const fromId = msg.from.id;
+                        bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+                        });
+
+                        bot.onText(/fri/, function(msg, match) {
+                            const fromId = msg.from.id;
+                            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+                            });
+
+                            bot.onText(/sat/, function(msg, match) {
+                                const fromId = msg.from.id;
+                                bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+                                });
+                
 //оплата за проезд
 bot.onText(/pay (.+)/, function(msg, match) {
     const fromId = msg.from.id;
