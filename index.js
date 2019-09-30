@@ -30,28 +30,12 @@ const button = {
         const button2 = {
             reply_markup: {
                 inline_keyboard: [
-                    [{
-                            text: 'Понидельник',
-                            callback_data: 'mon'
-                        },
-                        {
-                            text: 'Вторник',
-                            callback_data: 'tue'
-                        },
-                        {
-                            text: 'Среда',
-                            callback_data: 'wed'
-                        },                        {
-                            text: 'Четверг',
-                            callback_data: 'thu'
-                        },                        {
-                            text: 'Пятница',
-                            callback_data: 'fri'
-                        },                        {
-                            text: 'Субота',
-                            callback_data: 'sat'
-                        }
-                    ]
+                    [{text: 'Понидельник', callback_data: 'mon'}],
+                    [{text: 'Вторник', callback_data: 'tue'}],
+                    [{text: 'Среда',callback_data: 'wed'}],                        
+                    [{text: 'Четверг',callback_data: 'thu'}],
+                    [{text: 'Пятница',callback_data: 'fri'}],
+                    [{text: 'Субота',callback_data: 'sat'}]
                 ]
             }
         };
