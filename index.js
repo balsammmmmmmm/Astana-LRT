@@ -19,7 +19,7 @@ const button = {
     })
  };
  
- app.sendMessage(id, 'text', opt)
+ bot.sendMessage(id, 'text', opt)
 
 bot.onText(/\/оплата (.+)/, function(msg, match) {
          const fromId = msg.from.id;
