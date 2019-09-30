@@ -13,7 +13,7 @@ const button = {
     reply_markup: JSON.stringify({
         keyboard: [
             ['help'],
-            ['sch']
+            ['Расписание']
         ],
         resize_keyboard: true
     })
@@ -26,7 +26,7 @@ const button = {
         bot.sendMessage(fromId, `Чтобы получить билет просто напиши /pay "номер Автобуса"`);
         });
     
-    bot.onText(/sch/, function(msg, match) {
+    bot.onText(/Расписание/, function(msg, match) {
     const button2 = {
         parse_mode: 'html',
         disable_web_page_preview: false,
