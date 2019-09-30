@@ -27,7 +27,6 @@ const button = {
         });
     
     bot.onText(/sch/, function(msg, match) {
-        const chatId = msg.chat.id;
         const button = {
             reply_markup: {
                 inline_keyboard: [
@@ -74,7 +73,8 @@ const button = {
                 ]
             }
         };
-    bot.sendMessage(msg.chat.id, `Укажите день недели`, button);
+        bot.sendMessage(msg.from.id, `Укажите день недели`, button);
+        });
 
         bot.onText(/mon/, function(msg, match) {
             const fromId = msg.from.id;
@@ -124,6 +124,7 @@ bot.onText(/pay (.+)/, function(msg, match) {
 ТРАНЗАКЦИЯ: 33853${randomSecond}
 ТОО АСТАНА LRT
 https://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
+    });
  
 // bot.onText(/\/оплата (.+)/, function(msg, match) {
 //          const fromId = msg.from.id;
