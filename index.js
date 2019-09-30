@@ -31,10 +31,10 @@ const button = {
         parse_mode: 'html',
         disable_web_page_preview: false,
         reply_markup: JSON.stringify({
-        keyboard:  [
+        inline_keyboard:  [
             [{text: 'Понидельник', callback_data: 'mon'}],
             [{text: 'Вторник', callback_data: 'tue'}],
-            [{text: 'Среда',callback_data: 'wed'}],                        
+            [{text: 'Среда', callback_data: 'wed'}],                        
             [{text: 'Четверг',callback_data: 'thu'}],
             [{text: 'Пятница',callback_data: 'fri'}],
             [{text: 'Суббота',callback_data: 'sat'}]
@@ -44,32 +44,32 @@ const button = {
         bot.sendMessage(msg.from.id, `Укажите день недели`, button2);
         });
 
-        bot.onText(/mon/, function(msg, match) {
+        bot.onText(/Понидельник/, function(msg, match) {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
 
-        bot.onText(/tue/, function(msg, match) {
+        bot.onText(/Вторник/, function(msg, match) {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
                 
-        bot.onText(/wed/, function(msg, match) {
+        bot.onText(/Среда/, function(msg, match) {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
 
-        bot.onText(/thu/, function(msg, match) {
+        bot.onText(/Четверг/, function(msg, match) {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
 
-        bot.onText(/fri/, function(msg, match) {
+        bot.onText(/Пятница/, function(msg, match) {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
 
-        bot.onText(/sat/, function(msg, match) {
+        bot.onText(/Суббота/, function(msg, match) {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
