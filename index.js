@@ -28,14 +28,11 @@ const button = {
     
     bot.onText(/sch/, function(msg, match) {
         const button = {
-            reply_markup: {
+            reply_markup: JSON.stringify ({
                 inline_keyboard: [
                     [{
                             text: 'Понидельник',
-                            callback_data: JSON.stringify({
-                                'command': 'sch',
-                                'base': 'mon'
-                            })
+                            callback_data: 'mon'
                         },
                         {
                             text: 'Вторник',
