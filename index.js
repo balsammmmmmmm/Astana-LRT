@@ -17,7 +17,7 @@ const button = {
         resize_keyboard: true
     })
  };
-    bot.sendMessage(msg.from.id, `Hello ${msg.from.first_name}`, button);
+    bot.sendMessage(msg.from.id, `Hello ${msg.from.first_name} ${msg.from.last_name}`, button);
 });
 
 bot.onText(/help/, function(msg, match) {
@@ -25,7 +25,7 @@ bot.onText(/help/, function(msg, match) {
     bot.sendMessage(fromId, `Чтобы получить билет просто напиши номер Автобуса`);
     });
 
-bot.onText(/ (.+)/, function(msg, match) {
+bot.onText(/(.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
     const randomFirst = Math.floor(1000 + Math.random() * 9000);
