@@ -27,20 +27,20 @@ const button = {
         });
     
     bot.onText(/sch/, function(msg, match) {
-        const button2 = {
-            parse_mode: 'html',
-            disable_web_page_preview: false,
-            reply_markup: JSON.stringify({
-                inline_keyboard:  [
-                    [{text: 'Понидельник', callback_data: 'mon'}],
-                    [{text: 'Вторник', callback_data: 'tue'}],
-                    [{text: 'Среда',callback_data: 'wed'}],                        
-                    [{text: 'Четверг',callback_data: 'thu'}],
-                    [{text: 'Пятница',callback_data: 'fri'}],
-                    [{text: 'Суббота',callback_data: 'sat'}]
-                ]
-            })
-        };
+    const button2 = {
+        parse_mode: 'html',
+        disable_web_page_preview: false,
+        reply_markup: JSON.stringify({
+        keyboard:  [
+            [{text: 'Понидельник', callback_data: 'mon'}],
+            [{text: 'Вторник', callback_data: 'tue'}],
+            [{text: 'Среда',callback_data: 'wed'}],                        
+            [{text: 'Четверг',callback_data: 'thu'}],
+            [{text: 'Пятница',callback_data: 'fri'}],
+            [{text: 'Суббота',callback_data: 'sat'}]
+        ]
+    })
+};
         bot.sendMessage(msg.from.id, `Укажите день недели`, button2);
         });
 
