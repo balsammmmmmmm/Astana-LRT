@@ -68,7 +68,7 @@ const button = {
                         }
                     ]
                 ]
-            }
+            })
         };
         bot.sendMessage(msg.from.id, `Укажите день недели`, button);
         });
