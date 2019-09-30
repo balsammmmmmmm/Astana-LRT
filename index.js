@@ -28,7 +28,7 @@ const button = {
     
     bot.onText(/sch/, function(msg, match) {
         const button2 = {
-            reply_markup: JSON.stringify ({
+            reply_markup: {
                 inline_keyboard: [
                     [{
                             text: 'Понидельник',
@@ -53,7 +53,7 @@ const button = {
                         }
                     ]
                 ]
-            })
+            }
         };
         bot.sendMessage(msg.from.id, `Укажите день недели`, button2);
         });
@@ -63,30 +63,30 @@ const button = {
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
 
-            bot.onText(/tue/, function(msg, match) {
-                const fromId = msg.from.id;
-                bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
-                });
+        bot.onText(/tue/, function(msg, match) {
+            const fromId = msg.from.id;
+            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+            });
                 
-                bot.onText(/wed/, function(msg, match) {
-                    const fromId = msg.from.id;
-                    bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
-                    });
+        bot.onText(/wed/, function(msg, match) {
+            const fromId = msg.from.id;
+            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+            });
 
-                    bot.onText(/thu/, function(msg, match) {
-                        const fromId = msg.from.id;
-                        bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
-                        });
+        bot.onText(/thu/, function(msg, match) {
+            const fromId = msg.from.id;
+            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+            });
 
-                        bot.onText(/fri/, function(msg, match) {
-                            const fromId = msg.from.id;
-                            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
-                            });
+        bot.onText(/fri/, function(msg, match) {
+            const fromId = msg.from.id;
+            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+            });
 
-                            bot.onText(/sat/, function(msg, match) {
-                                const fromId = msg.from.id;
-                                bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
-                                });
+        bot.onText(/sat/, function(msg, match) {
+            const fromId = msg.from.id;
+            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+            });
                 
 //оплата за проезд
 bot.onText(/pay (.+)/, function(msg, match) {
