@@ -42,32 +42,32 @@ const button = {
                             text: 'Вторник',
                             callback_data: JSON.stringify({
                                 'command': 'sch',
-                                'base': 'tue'
+                                callback_data: 'tue'
                             })
                         },
                         {
                             text: 'Среда',
                             callback_data: JSON.stringify({
                                 'command': 'sch',
-                                'base': 'wed'
+                                callback_data: 'wed'
                             })
                         },                        {
                             text: 'Четверг',
                             callback_data: JSON.stringify({
                                 'command': 'sch',
-                                'base': 'thu'
+                                callback_data: 'thu'
                             })
                         },                        {
                             text: 'Пятница',
                             callback_data: JSON.stringify({
                                 'command': 'sch',
-                                'base': 'fri'
+                                callback_data: 'fri'
                             })
                         },                        {
                             text: 'Субота',
                             callback_data: JSON.stringify({
                                 'command': 'sch',
-                                'base': 'sat'
+                                callback_data: 'sat'
                             })
                         }
                     ]
