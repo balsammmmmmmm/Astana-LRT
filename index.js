@@ -35,7 +35,7 @@ const button = {
                             text: 'Понидельник',
                             callback_data: JSON.stringify({
                                 'command': 'sch',
-                                'base': 'mon'
+                                callback_data: 'mon'
                             })
                         },
                         {
@@ -81,6 +81,11 @@ const button = {
             const fromId = msg.from.id;
             bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
             });
+
+            bot.onText(/mon/, function(msg, match) {
+                const fromId = msg.from.id;
+                bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+                });
 //оплата за проезд
 bot.onText(/pay (.+)/, function(msg, match) {
     const fromId = msg.from.id;
