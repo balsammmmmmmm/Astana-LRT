@@ -6,10 +6,10 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
 
-bot.onText(/\/start (.+)/), function(msg, match) {
+bot.onText(/\/start (.+)/, function(msg, match) {
     const chatId = msg.chat.id;
     bot.sendMessage(chatId, `Чтобы оплатить напишите /оплата "номер траспорта"`);
-};
+});
 bot.onText(/\/оплата (.+)/, function(msg, match) {
          const fromId = msg.from.id;
          const resp = match[1]; 
