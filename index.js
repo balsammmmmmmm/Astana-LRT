@@ -12,7 +12,8 @@ const button = {
     disable_web_page_preview: false,
     reply_markup: JSON.stringify({
         keyboard: [
-            ['help']
+            ['help'],
+            ['sch']
         ],
         resize_keyboard: true
     })
@@ -20,12 +21,68 @@ const button = {
     bot.sendMessage(msg.from.id, `Hello ${msg.from.first_name} ${msg.from.last_name}`, button);
 });
 
-bot.onText(/help/, function(msg, match) {
-    const fromId = msg.from.id;
-    bot.sendMessage(fromId, `Чтобы получить билет просто напиши номер Автобуса`);
-    });
+    bot.onText(/help/, function(msg, match) {
+        const fromId = msg.from.id;
+        bot.sendMessage(fromId, `Чтобы получить билет просто напиши /pay "номер Автобуса"`);
+        });
+    
+    bot.onText(/schedule/, function(msg, match) {
+        const fromId = msg.from.id;
+        const button = {
+            reply_markup: {
+                inline_keyboard: [
+                    [{
+                            text: 'Понидельник',
+                            callback_data: JSON.stringify({
+                                'command': 'sch',
+                                'base': 'mon'
+                            })
+                        },
+                        {
+                            text: 'Вторник',
+                            callback_data: JSON.stringify({
+                                'command': 'sch',
+                                'base': 'tue'
+                            })
+                        },
+                        {
+                            text: 'Среда',
+                            callback_data: JSON.stringify({
+                                'command': 'sch',
+                                'base': 'wed'
+                            })
+                        },                        {
+                            text: 'Четверг',
+                            callback_data: JSON.stringify({
+                                'command': 'sch',
+                                'base': 'thu'
+                            })
+                        },                        {
+                            text: 'Пятница',
+                            callback_data: JSON.stringify({
+                                'command': 'sch',
+                                'base': 'fri'
+                            })
+                        },                        {
+                            text: 'Субота',
+                            callback_data: JSON.stringify({
+                                'command': 'sch',
+                                'base': 'sat'
+                            })
+                        }
+                    ]
+                ]
+            }
+        };
+        bot.sendMessage(fromId, `Укажите день недели`, button);
+        });
 
-bot.onText(/(.+)/, function(msg, match) {
+        bot.onText(/mon/, function(msg, match) {
+            const fromId = msg.from.id;
+            bot.sendMessage(fromId, `Два Урока у пидараза в 8 утра`);
+            });
+
+bot.onText(/pay (.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
     const randomFirst = Math.floor(1000 + Math.random() * 9000);
