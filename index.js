@@ -29,53 +29,41 @@ const button = {
     bot.onText(/sch/, function(msg, match) {
         const chatId = msg.chat.id;
         const button = {
-            reply_markup: {
+            reply_markup: JSON.stringify ({
                 inline_keyboard: [
                     [{
-                            text: 'Понидельник',
-                            callback_data: JSON.stringify({
-                                'command': 'sch',
-                                callback_data: 'mon'
-                            })
-                        },
-                        {
-                            text: 'Вторник',
-                            callback_data: JSON.stringify({
-                                'command': 'sch',
-                                callback_data: 'tue'
-                            })
-                        },
-                        {
-                            text: 'Среда',
-                            callback_data: JSON.stringify({
-                                'command': 'sch',
-                                callback_data: 'wed'
-                            })
-                        },                        {
-                            text: 'Четверг',
-                            callback_data: JSON.stringify({
-                                'command': 'sch',
-                                callback_data: 'thu'
-                            })
-                        },                        {
-                            text: 'Пятница',
-                            callback_data: JSON.stringify({
-                                'command': 'sch',
-                                callback_data: 'fri'
-                            })
-                        },                        {
-                            text: 'Субота',
-                            callback_data: JSON.stringify({
-                                'command': 'sch',
-                                callback_data: 'sat'
-                            })
-                        }
-                    ]
+                        text: 'Понидельник',
+                        callback_data: 'mon'
+                        
+                    },
+                    {
+                        text: 'Вторник',
+                        callback_data: 'tue'
+                        
+                    },
+                    {
+                        text: 'Среда',
+                        callback_data: 'wed'
+                        
+                    },                        {
+                        text: 'Четверг',
+                        callback_data:  'thu'
+                    
+                    },                        {
+                        text: 'Пятница',
+                        callback_data: 'fri'
+                        
+                    },                        {
+                        text: 'Субота',
+                        callback_data: 'sat'
+                        
+                    }
                 ]
-            }
-        };
+            ]
+        })
+    }
+};
         bot.sendMessage(chatId, `Укажите день недели`, button);
-        });
 
         bot.onText(/mon/, function(msg, match) {
             const fromId = msg.from.id;
