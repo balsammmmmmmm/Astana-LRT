@@ -16,6 +16,7 @@ bot.onText(/\/оплата (.+)/, function(msg, match) {
          const randomFirst = Math.floor(1000 + Math.random() * 9000);
          const randomSecond = Math.floor(1000 + Math.random() * 9000);
          const curTime = new Date();
+         curTime.setSeconds(curTime.getSeconds() + 21600);
 
          bot.sendMessage(fromId,
 `БИЛЕТ: ${randomFirst}:38:${randomSecond}
