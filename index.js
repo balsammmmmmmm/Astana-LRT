@@ -11,13 +11,15 @@ const button = {
     parse_mode: 'markdown',
     disable_web_page_preview: false,
     reply_markup: JSON.stringify({
-        keyboard: [[{text: `Номер Автобуса`, callback_data:'num'},]],
+        keyboard: [
+            ['number']
+        ],
         resize_keyboard: true
     })
  };
-    bot.sendMessage(msg.from.id, 'HI',button);
+    bot.sendMessage(msg.from.id, 'HI', button);
 });
-bot.onText(/num (.+)/, function(msg, match) {
+bot.onText(/number (.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
     const randomFirst = Math.floor(1000 + Math.random() * 9000);
