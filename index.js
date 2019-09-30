@@ -17,7 +17,7 @@ const button = {
         resize_keyboard: true
     })
  };
-    bot.sendMessage(msg.from.id, `Hello ${msg.from.id}`, button);
+    bot.sendMessage(msg.from.id, `Hello ${msg.from.first_name}`, button);
 });
 
 bot.onText(/help/, function(msg, match) {
