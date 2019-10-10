@@ -111,8 +111,8 @@ bot.onText(/pay (.+)/, function(msg, match) {
     const randomSecond = Math.floor(1000 + Math.random() * 9000);
     function getTime(){
         let now = new Date();
-        let result = now.getHours() + ":" + now.getMinutes();
-
+        let result = now.getHours() + ":" + now.getMinutes() + ":" + now.setSeconds(now.getSeconds() + 21600) + now.getDate() + "." + (now.getMonth() + 1)
+        + "." + now.getFullYear();
         return(result);
     };
     const tm = getTime();
