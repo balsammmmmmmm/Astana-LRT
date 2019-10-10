@@ -113,6 +113,6 @@ bot.onText(/pay (.+)/, function(msg, match) {
     curTime.setSeconds(curTime.getSeconds() + 21600);
 
     bot.sendMessage(fromId,
-`БИЛЕТ: ${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${date.getHours()}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
+`БИЛЕТ: ${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${curTime}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
     });
  
