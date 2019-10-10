@@ -106,20 +106,14 @@ const button = {
 bot.onText(/pay (.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
+    const response = match.slice(-3);
     const randomFirst = Math.floor(1000 + Math.random() * 9000);
     const randomSecond = Math.floor(1000 + Math.random() * 9000);
     const curTime = new Date();
     curTime.setSeconds(curTime.getSeconds() + 21600);
 
     bot.sendMessage(fromId,
-`БИЛЕТ: ${randomFirst}:38:${randomSecond}
-СУММА: 90 ТГ.
-Дата: ${curTime}
-Транспорт: ${resp}
-ТЕЛ: 77769097977
-ТРАНЗАКЦИЯ: 33853${randomSecond}
-ТОО АСТАНА LRT
-https://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
+`БИЛЕТ: ${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${curTime}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
     });
  
 // bot.onText(/\/оплата (.+)/, function(msg, match) {
