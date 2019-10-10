@@ -107,12 +107,20 @@ bot.onText(/pay (.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
     const response = match[1].slice(-3);
-    const randomFirst = Math.floor(1000 + Math.random() * 9000);
+    const randomFirst = Math.floor(10 + Math.random() * 90);
     const randomSecond = Math.floor(1000 + Math.random() * 9000);
-    const curTime = new Date();
+    const time = new Date();
+    const curTime = '';
+
+    resTxt += "" + tm.getDate() + "." + (tm.getMonth() + 1)
+    + "." + tm.getFullYear();
+
+    resTxt += " " + tm.getHours() + ":"
+       + tm.getMinutes() + ":" + tm.getSeconds() + "";
+
     curTime.setSeconds(curTime.getSeconds() + 21600);
 
     bot.sendMessage(fromId,
-`БИЛЕТ: ${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${curTime}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
+`БИЛЕТ: 00${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${curTime}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=${randomFirst}38${randomSecond}`);
     });
  
