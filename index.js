@@ -106,7 +106,7 @@ const button = {
 bot.onText(/pay (.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
-    const response = match.slice(-3);
+    const response = match[1].slice(-3);
     const randomFirst = Math.floor(1000 + Math.random() * 9000);
     const randomSecond = Math.floor(1000 + Math.random() * 9000);
     const curTime = new Date();
