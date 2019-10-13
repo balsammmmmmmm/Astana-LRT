@@ -5,19 +5,19 @@ process.env["NTBA_FIX_319"] = 1;
 const TelegramBot = require('node-telegram-bot-api');
 const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
-//стартовые кнопки
+/*//стартовые кнопки
 bot.onText(/\/start/, function(msg, match) {
-// const button = {
-//     parse_mode: 'markdown',
-//     disable_web_page_preview: false,
-//     reply_markup: JSON.stringify({
-//         keyboard: [
-//             ['help'],
-//             ['Расписание']
-//         ],
-//         resize_keyboard: true
-//     })
-//  };
+const button = {
+    parse_mode: 'markdown',
+    disable_web_page_preview: false,
+    reply_markup: JSON.stringify({
+        keyboard: [
+            ['help'],
+            ['Расписание']
+        ],
+        resize_keyboard: true
+    })
+ };
     bot.sendMessage(msg.from.id, `Hello ${msg.from.first_name} ${msg.from.last_name}`, button);
 });
 //  ANSWER TO HOW TO PAY
@@ -26,7 +26,7 @@ bot.onText(/\/start/, function(msg, match) {
         bot.sendMessage(fromId, `Чтобы получить билет просто напиши /pay "номер Автобуса"`);
         });
 //  SCHEDULE
-/*    bot.onText(/Расписание/, function(msg, match) {
+    bot.onText(/Расписание/, function(msg, match) {
     const button2 = {
         parse_mode: 'html',
         disable_web_page_preview: false,
