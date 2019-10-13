@@ -7,17 +7,17 @@ const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
 //стартовые кнопки
 bot.onText(/\/start/, function(msg, match) {
-const button = {
-    parse_mode: 'markdown',
-    disable_web_page_preview: false,
-    reply_markup: JSON.stringify({
-        keyboard: [
-            ['help'],
-            ['Расписание']
-        ],
-        resize_keyboard: true
-    })
- };
+// const button = {
+//     parse_mode: 'markdown',
+//     disable_web_page_preview: false,
+//     reply_markup: JSON.stringify({
+//         keyboard: [
+//             ['help'],
+//             ['Расписание']
+//         ],
+//         resize_keyboard: true
+//     })
+//  };
     bot.sendMessage(msg.from.id, `Hello ${msg.from.first_name} ${msg.from.last_name}`, button);
 });
 //  ANSWER TO HOW TO PAY
@@ -26,7 +26,7 @@ const button = {
         bot.sendMessage(fromId, `Чтобы получить билет просто напиши /pay "номер Автобуса"`);
         });
 //  SCHEDULE
-    bot.onText(/Расписание/, function(msg, match) {
+/*    bot.onText(/Расписание/, function(msg, match) {
     const button2 = {
         parse_mode: 'html',
         disable_web_page_preview: false,
@@ -100,10 +100,10 @@ const button = {
 12:10 - 13:00	Шетел тілі,'прак' Главный корпус, 240каб.
 13:10 - 14:00	Физика,'прак', УАК, 331
 `);
-            });
+            });*/
                 
 //оплата за проезд
-bot.onText(/pay (.+)/, function(msg, match) {
+bot.onText(/(.+)/, function(msg, match) {
     const fromId = msg.from.id;
     const resp = match[1];
     const response = match[1].slice(-3);
