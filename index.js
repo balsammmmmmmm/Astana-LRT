@@ -22,6 +22,8 @@ bot.onText(/\/pay(.+)/, function(msg, match) {
     });
  
 //grade
+
+bot.onText(/\/gr(.+)/, function(msg, match) {
 const edua = require('./scrapper');
 
 (async() => {
@@ -35,3 +37,5 @@ const edua = require('./scrapper');
   debugger;
 
 })();
+
+});

@@ -16,10 +16,7 @@ const platonus = {
      
      login: async (username, password) => { 
           await platonus.page.goto(eduEnu, { waitUntil: 'networkidle2' });
-          //await platonus.page.waitFor(1000);
-          // let closeButton = await platonus.page.type('div[class="backdrop-close"]');
-          // await closeButton[0].click();
-          
+        
           
           await platonus.page.type('input[name = "iin"]', username, {delay: 1});
           await platonus.page.type('input[name = "password"]', password, {delay: 1});
