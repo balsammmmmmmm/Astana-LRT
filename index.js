@@ -25,9 +25,10 @@ bot.onText(/\/pay(.+)/, function(msg, match) {
 
 bot.onText(/\/gr(.+)/, function(msg, match) {
 const edua = require('./scrapper');
-
+var chatId = msg.chat.id;
+var photo = 'grades.png';
 (async() => {
-  
+  s
   await edua.initialize();
 
   await edua.login('020924550859', 'Ch@rlycharly2002lool');
@@ -37,5 +38,5 @@ const edua = require('./scrapper');
   debugger;
 
 })();
-
+  bot.sendPhoto(chatId, photo, { caption: ' ' });
 });
