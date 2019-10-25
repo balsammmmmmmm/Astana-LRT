@@ -45,6 +45,6 @@ bot.onText(/\/gr(.+)/, function (msg, match) {
 
 
   bot.sendPhoto(chatId, photo, {
-    caption: 'grades.png'
+    caption: 'platonus.png'
   });
 });
