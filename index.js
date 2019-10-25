@@ -5,7 +5,7 @@ process.env["NTBA_FIX_319"] = 1;
 const TelegramBot = require('node-telegram-bot-api');
 const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {polling: true});
-const edu = require('./scrapper');
+const botw = require('./grade.js');
 
 //оплата за проезд
 bot.onText(/\/pay(.+)/, function(msg, match) {
@@ -24,19 +24,8 @@ bot.onText(/\/pay(.+)/, function(msg, match) {
 //grade
 
 bot.onText(/\/gr(.+)/, function(msg, match) {
-const edua = require('./scrapper');
-var chatId = msg.chat.id;
-var photo = 'grades.png';
-(async() => {
-  s
-  await edua.initialize();
 
-  await edua.login('020924550859', 'Ch@rlycharly2002lool');
 
-  await edua.grade();
 
-  debugger;
-
-})();
-  bot.sendPhoto(chatId, photo, { caption: ' ' });
+  bot.sendPhoto(chatId, photo, { caption: 'grades.png' });
 });
