@@ -33,7 +33,7 @@ bot.onText(/\/gr(.+)/, function (msg, match) {
 
     await botw.initialize();
 
-    //await botw.login('020924550859', 'Ch@rlycharly2002lool');
+    await botw.login('020924550859', 'Ch@rlycharly2002lool');
 
     await botw.grade();
 
