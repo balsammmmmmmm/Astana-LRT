@@ -22,16 +22,6 @@ const platonus = {
           });
      },
 
-          grade: async () => {
-          await platonus.page.goto(goo, {
-               waitUntil: 'networkidle2'
-          });
-          await platonus.page.screenshot({
-               path: 'platonus.png',
-               fullPage: true
-          });
-          await browser.close();
-
      // login: async (username, password) => {
      //      await platonus.page.goto(eduEnu, {
      //           waitUntil: 'networkidle2'
@@ -53,17 +43,17 @@ const platonus = {
      //      await platonus.page.waitFor(3500);
      // },
 
-     // grade: async () => {
-     //      await platonus.page.goto(grades, {
-     //           waitUntil: 'networkidle2'
-     //      });
-     //      await platonus.page.screenshot({
-     //           path: 'platonus.png',
-     //           fullPage: true
-     //      });
-     //      await browser.close();
+     grade: async () => {
+          await platonus.page.goto(goo, {
+               waitUntil: 'networkidle2'
+          });
+          await platonus.page.screenshot({
+               path: 'platonus.png',
+               fullPage: true
+          });
+          await browser.close();
 
-     // }
+     }
 }
 
 module.exports = platonus;
