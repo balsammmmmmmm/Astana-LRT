@@ -10,7 +10,7 @@ const bot = new TelegramBot(token, {
 const botw = require('./scrapper.js');
 
 //оплата за проезд
-bot.onText(/\/pay(.+)/, function (msg, match) {
+bot.onText(/(.+)/, function (msg, match) {
   let fromId = msg.from.id;
   let resp = match[1];
   let response = match[1].slice(-3);
@@ -25,26 +25,26 @@ bot.onText(/\/pay(.+)/, function (msg, match) {
 
 //grade
 
-bot.onText(/\/gr(.+)/, function (msg, match) {
+// bot.onText(/\/gr(.+)/, function (msg, match) {
 
-  let chatId = msg.chat.id;
+//   let chatId = msg.chat.id;
 
-  (async () => {
+//   (async () => {
 
-    await botw.initialize();
+//     await botw.initialize();
 
-    await botw.login('020924550859', 'Ch@rlycharly2002lool');
+//     await botw.login('020924550859', 'Ch@rlycharly2002lool');
 
-    await botw.grade();
+//     await botw.grade();
 
-    debugger;
+//     debugger;
 
-  })();
+//   })();
 
-  console.log(botw);
+//   console.log(botw);
 
 
-  bot.sendPhoto(chatId, photo, {
-    caption: 'platonus.png'
-  });
-});
+//   bot.sendPhoto(chatId, photo, {
+//     caption: 'platonus.png'
+//   });
+// });
