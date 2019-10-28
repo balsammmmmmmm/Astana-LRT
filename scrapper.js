@@ -25,3 +25,4 @@ async function platonus(login, password) {
 
    browser.close();
 };
+module.exports = platonus;
