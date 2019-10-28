@@ -25,7 +25,7 @@ bot.onText(/\/pay(.+)/, function (msg, match) {
 
 //grade
 
-bot.onText(/\/gr(.+)/, (msg, match) => {
+bot.onText(/\/gr(.+)/, function (msg, match) => {
   const chatId = msg.chat.id;
   const photo = 'grades.png';
 
