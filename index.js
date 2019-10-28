@@ -37,7 +37,6 @@ bot.onText(/\/gr(.+)/, function (msg, match) {
   
     await edua.grade();
   
-  
   })().then(() => {
     console.log('lol');
     bot.sendPhoto(chatId, photo, { caption: ' ' });
