@@ -2,8 +2,13 @@ const puppeteer = require('puppeteer');
 const eduEnu = 'https://edu.enu.kz/';
 const grades = 'https://edu.enu.kz/current_progress_gradebook_student';
 
-async function platonus(login, password) {
-    const browser = await puppeteer.launch({ headless: false });
+async function platonus(username, password) {
+    const browser = await puppeteer.launch({ args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--single-process'
+      ], });
    const page = await platonus.browser.newPage();
    await page.setViewport({width: 1000, height: 500});
 
