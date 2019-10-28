@@ -29,7 +29,7 @@ bot.onText(/\/gr(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const photo = 'grades.png';
 
-  edua('020924550859', 'Ch@rlycharly2002lool').then(() => {
+  Botw('020924550859', 'Ch@rlycharly2002lool').then(() => {
       bot.sendPhoto(chatId, photo, { caption: ' ' });
   }).catch((err) => {
       console.log(err)
