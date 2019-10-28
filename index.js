@@ -39,7 +39,7 @@ bot.onText(/\/gr(.+)/, function (msg, match) {
   
   })().then(() => {
     console.log('lol');
-    bot.sendPhoto(chatId, photo, { caption: ' ' });
+    bot.sendPhoto(chatId, photo, { caption: 'grades.png' });
 }).catch((err) => {
     console.log(err)
 });
