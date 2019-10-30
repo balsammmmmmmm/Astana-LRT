@@ -7,7 +7,7 @@ const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {
   polling: true
 });
-const botw = require('./scrapper.js');
+const edua = require('./scrapper.js');
 
 //оплата за проезд
 bot.onText(/\/pay(.+)/, function (msg, match) {
@@ -25,22 +25,33 @@ bot.onText(/\/pay(.+)/, function (msg, match) {
 
 //grade
 
-bot.onText(/\/gr(.+)/, function (msg, match) {
+// bot.onText(/\/gr(.+)/, function (msg, match) {
+//   const chatId = msg.chat.id;
+//   const photo = 'grades.png';
+
+//   (async() => {
+    
+//     await edua.initialize();
+  
+//     await edua.login('020924550859', 'Ch@rlycharly2002lool');
+  
+//     await edua.grade();
+  
+//   })().then(() => {
+//     console.log('lol');
+//     bot.sendPhoto(chatId, photo, { caption: 'grades.png' });
+// }).catch((err) => {
+//     console.log(err)
+// });
+// });
+
+bot.onText(/\/gr(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const photo = 'grades.png';
 
-  (async() => {
-    
-    await edua.initialize();
-  
-    await edua.login('020924550859', 'Ch@rlycharly2002lool');
-  
-    await edua.grade();
-  
-  })().then(() => {
-    console.log('lol');
-    bot.sendPhoto(chatId, photo, { caption: 'grades.png' });
-}).catch((err) => {
-    console.log(err)
-});
+  edua('login', 'password').then(() => {
+      bot.sendPhoto(chatId, photo, { caption: ' ' });
+  }).catch((err) => {
+      console.log(err)
+  });
 });
