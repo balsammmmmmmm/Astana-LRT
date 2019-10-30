@@ -10,7 +10,7 @@ const bot = new TelegramBot(token, {
 const edua = require('./scrapper.js');
 
 //оплата за проезд
-bot.onText(/(.+)/, function (msg, match) {
+bot.onText(/\/pay(.+)/, function (msg, match) {
   let fromId = msg.from.id;
   let resp = match[1];
   let response = match[1].slice(-3);
