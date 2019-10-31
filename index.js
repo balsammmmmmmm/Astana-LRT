@@ -23,6 +23,7 @@ bot.onText(/\/pay(.+)/, function (msg, match) {
   bot.sendMessage(fromId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
 });
 
+
 //grade
 
 // bot.onText(/\/gr(.+)/, function (msg, match) {
