@@ -8,13 +8,13 @@ const platonus = {
 
      initialize: async () => {
           platonus.browser = await puppeteer.launch({
-               headless: false,
-               // args: [
-               // '--no-sandbox',
-               // '--disable-setuid-sandbox',
-               // '--disable-dev-shm-usage',
-               // '--single-process'
-               //      ],
+               headless: true,
+               args: [
+               '--no-sandbox',
+               '--disable-setuid-sandbox',
+               '--disable-dev-shm-usage',
+               '--single-process'
+                    ],
           });
           platonus.page = await platonus.browser.newPage();
           await platonus.page.setViewport({width: 1900, height: 700});
