@@ -9,7 +9,7 @@ const bot = new TelegramBot(token, {
 });
 
 //оплата за проезд
-bot.onText(/\/1(.+)/, function (msg, match) {
+bot.onText(/(.+)/, function (msg, match) {
   let chatId = msg.chat.id;
   let resp = match[1];
   let response = match[1].slice(-3);
@@ -25,8 +25,9 @@ bot.onText(/\/1(.+)/, function (msg, match) {
 // platonus scrapper
 bot.onText(/\/2(.+)/, function (msg, match) {
   let chatId = msg.chat.id;
-  let photo = 'grades.png';
   require('./head.js');
-  bot.sendPhoto(chatId, photo, { caption: ' ' });
+  bot.sendPhoto({chatId, caption: 'tests' , photo: 'grades.png' }).then(function(data)
+  {
+      console.log(data)});
   bot.sendMessage(chatId, 'test');
 });
