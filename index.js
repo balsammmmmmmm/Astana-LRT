@@ -9,8 +9,8 @@ const bot = new TelegramBot(token, {
 });
 
 //оплата за проезд
-bot.onText(/(.+)/, function (msg, match) {
-  let fromId = msg.from.id;
+bot.onText(/\/1(.+)/, function (msg, match) {
+  let chatId = msg.chat.id;
   let resp = match[1];
   let response = match[1].slice(-3);
   let randomFirst = Math.floor(100 + Math.random() * 900);
@@ -19,13 +19,13 @@ bot.onText(/(.+)/, function (msg, match) {
   curTime.setSeconds(curTime.getSeconds() + 21600);
   const ct = curTime.toString().substring(4, 24);
 
-  bot.sendMessage(fromId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
+  bot.sendMessage(chatId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
 });
 
 // platonus scrapper
-bot.onText(/\/gr(.+)/, (msg, match) => {
-  const chatId = msg.chat.id;
-  const photo = 'grades.png';
+bot.onText(/\/2(.+)/, function (msg, match) {
+  let chatId = msg.chat.id;
+  let photo = 'grades.png';
   require('./head.js');
   bot.sendPhoto(chatId, photo, { caption: ' ' });
   bot.sendMessage(chatId, 'test');
