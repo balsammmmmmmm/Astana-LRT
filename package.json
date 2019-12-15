@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.27",
     "node-telegram-bot-api": "^0.30.0",
-    "puppeteer": "^1.20.0",
-    "telegraf": "^3.32.0"
+    "puppeteer": "^2.0.0",
+    "telegraf": "^3.34.1"
   }
 }

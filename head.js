@@ -1,4 +1,4 @@
-const edua = require('./scrapper');
+const edua = require('./scrapper.js');
   (async() => {
     
     await edua.initialize();
@@ -8,7 +8,6 @@ const edua = require('./scrapper');
     await edua.grade();
   })().then(() => {
     console.log('Process done!');
-    // bot.sendPhoto(chatId, photo, { caption: ' ' });
 }).catch((err) => {
     console.log(err)
 });

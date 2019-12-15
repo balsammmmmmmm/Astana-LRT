@@ -25,8 +25,9 @@ bot.onText(/(.+)/, function (msg, match) {
 // platonus scrapper
 bot.onText(/\/2(.+)/, function (msg, match) {
   let chatId = msg.chat.id;
+  let photo = grades.png
   require('./head.js');
-  bot.sendPhoto({chatId, caption: 'tests' , photo: 'grades.png' }).then(function(data)
+  bot.sendPhoto({chatId, photo, caption: 'tests' }).then(function(data)
   {
       console.log(data)});
   bot.sendMessage(chatId, 'test');
