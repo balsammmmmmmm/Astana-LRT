@@ -16,19 +16,33 @@ bot.onText(/(.+)/, function (msg, match) {
   let randomFirst = Math.floor(100 + Math.random() * 900);
   let randomSecond = Math.floor(1000 + Math.random() * 9000);
   const curTime = new Date();
-    curTime.setSeconds(curTime.getSeconds() + 21600);
   const ct = curTime.toString().substring(4, 24);
 
   bot.sendMessage(chatId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
 });
 
 // platonus scrapper
-bot.onText(/\/2(.+)/, function (msg, match) {
+// bot.onText(/\/2(.+)/, function (msg, match) {
+//   let chatId = msg.chat.id;
+//   let photo = 'https://contacts.google.com/?hl=ru&tab=iC1&authuser=0';
+//   require('./head.js');
+//   bot.sendPhoto({chatId, photo, caption: 'tests' }).then(function(data)
+//   {
+//       console.log(data)});
+//   bot.sendMessage(chatId, 'test');
+// });
+
+// // inst bot 
+// bot.onText(/\/2(.+)/, function(msg, match) {
+//   let chatId = msg.chat.id;
+//   require('./head.js');
+  
+//   bot.sendMessage(chatId, 'check inst')
+// });
+
+// puppeteer scraping
+bot.onText(/\/1(.+)/, function(msg, match) {
   let chatId = msg.chat.id;
-  let photo = 'https://contacts.google.com/?hl=ru&tab=iC1&authuser=0';
-  require('./head.js');
-  bot.sendPhoto({chatId, photo, caption: 'tests' }).then(function(data)
-  {
-      console.log(data)});
-  bot.sendMessage(chatId, 'test');
+  require('./scrap.js');
+  bot.sendMessage(chatId, `${title}`);
 });
