@@ -7,7 +7,6 @@ const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {
   polling: true
 });
-const edua = require('./scrapper.js');
 
 //оплата за проезд
 bot.onText(/(.+)/, function (msg, match) {
@@ -23,36 +22,11 @@ bot.onText(/(.+)/, function (msg, match) {
   bot.sendMessage(fromId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
 });
 
-
-//grade
-
-// bot.onText(/(.+)/, function (msg, match) {
-//   const chatId = msg.chat.id;
-//   const photo = 'grades.png';
-
-//   (async() => {
-    
-//     await edua.initialize();
-  
-//     await edua.login('020924550859', 'Ch@rlycharly2002lool');
-  
-//     await edua.grade();
-  
-//   })().then(() => {
-//     console.log('lol');
-//     bot.sendPhoto(chatId, photo, { caption: 'grades.png' });
-// }).catch((err) => {
-//     console.log(err)
-// });
-// });
-
+// platonus scrapper
 bot.onText(/\/gr(.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const photo = 'grades.png';
-
-  edua('login', 'password').then(() => {
-      bot.sendPhoto(chatId, photo, { caption: ' ' });
-  }).catch((err) => {
-      console.log(err)
-  });
+  require('./head.js');
+  bot.sendPhoto(chatId, photo, { caption: ' ' });
+  bot.sendMessage(chatId, 'test');
 });
