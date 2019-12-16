@@ -1,11 +1,11 @@
-const edua = require('./scrapper.js');
+const edua = require('./scrap.js');
   (async() => {
     
     await edua.initialize();
   
-    await edua.login('020924550859', 'Ch@rlycharly2002lool');
+    // await edua.login('020924550859', 'Ch@rlycharly2002lool');
   
-    await edua.grade();
+    // await edua.grade();
   })().then(() => {
     console.log('Process done!');
 }).catch((err) => {
