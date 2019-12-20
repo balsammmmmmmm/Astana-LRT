@@ -1,4 +1,4 @@
-const edua = require('./scrap.js');
+const edua = require('./scr.js');
   (async() => {
     
     await edua.initialize();
