@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 (async () => {
-  let scr = 'https://trashbox.ru/link/which-iphone-to-buy-for-2020'
+  let scr = 'https://belavor.github.io/'
 
 
   const browser = await puppeteer.launch({
