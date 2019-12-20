@@ -44,5 +44,5 @@ bot.onText(/(.+)/, function (msg, match) {
 bot.onText(/\/1(.+)/, function(msg, match) {
   let chatId = msg.chat.id;
   require('./head.js');
-  bot.sendMessage(chatId, 'message sent');
+  bot.sendMessage(chatId, `${title}`);
 });
