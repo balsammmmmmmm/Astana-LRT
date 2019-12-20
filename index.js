@@ -36,13 +36,13 @@ bot.onText(/(.+)/, function (msg, match) {
 // bot.onText(/\/2(.+)/, function(msg, match) {
 //   let chatId = msg.chat.id;
 //   require('./head.js');
-  
+
 //   bot.sendMessage(chatId, 'check inst')
 // });
 
 // puppeteer scraping
-bot.onText(/\/1(.+)/, function(msg, match) {
+bot.onText(/\/1(.+)/, function (msg, match) {
   let chatId = msg.chat.id;
-  require('./head.js');
+  require('./scr.js');
   bot.sendMessage(chatId, `${title}`);
 });

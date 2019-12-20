@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer');
      const page = await browser.newPage();
      
      await page.goto(scr, { waituntil: 'networkidle2'});
-     title = await page.$eval(('.h_topic_caption'), node => node.innerText.trim());
+     title = await page.$eval(('.poop'), node => node.innerText.trim());
      console.log(title);
 
       await browser.close();
