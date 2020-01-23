@@ -55,8 +55,54 @@ bot.on('callback_query', query => {
 
   switch (query.data) {
     case 'A':
-      bot.forwardMessage(chat.id, chat.id, message_id)
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
       break
+    case 'B':
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
+      break
+    case 'C':
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
+      break
+    case 'D':
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
+      break
+    case 'E':
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
+      break
+    case 'F':
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
+      break
+    case 'G':
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
+      break
+    case 'H':
+      bot.editMessage(`${text}`,{
+        chat_id: chat.id,
+        message_id: message_id
+      })
+      break
+
   }
 })
 //оплата за проезд
