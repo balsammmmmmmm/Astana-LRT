@@ -7,6 +7,21 @@ const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
 const bot = new TelegramBot(token, {
   polling: true
 });
+// bot.on('message', msg => {
+//   let chatId = msg.chat.id;
+//   reply_markup: {
+//     keyboard: [
+//       [A],
+//       [B],
+//       [C],
+//       [D],
+//       [E],
+//       [F],
+//       [G],
+//       [H],
+//     ]
+//   }
+// });
 
 //оплата за проезд
 bot.onText(/(.+)/, function (msg, match) {
@@ -17,7 +32,14 @@ bot.onText(/(.+)/, function (msg, match) {
   let randomSecond = Math.floor(1000 + Math.random() * 9000);
   const curTime = new Date();
   const ct = curTime.toString().substring(4, 24);
-
+  reply_markup: {
+    keyboard: [
+      [A, B, C],
+      [D, E, F],
+      [G, H],
+      [Закрыть]
+    ]
+  }
   bot.sendMessage(chatId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} A${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
 });
 
@@ -41,7 +63,7 @@ bot.onText(/(.+)/, function (msg, match) {
 // });
 
 // puppeteer scraping
-bot.onText(/\/1/, function (msg,) {
+bot.onText(/\/1/, function (msg, ) {
   let chatId = msg.chat.id;
   require('./head.js');
   bot.sendMessage(chatId, `${title}`);
