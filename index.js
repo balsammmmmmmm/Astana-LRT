@@ -41,7 +41,7 @@ bot.onText(/(.+)/, function (msg, match) {
 // });
 
 // puppeteer scraping
-bot.onText(/\/1(.+)/, function (msg, match) {
+bot.onText(/\/1/, function (msg,) {
   let chatId = msg.chat.id;
   require('./head.js');
   bot.sendMessage(chatId, `${title}`);
