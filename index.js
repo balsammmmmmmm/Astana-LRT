@@ -8,32 +8,57 @@ const bot = new TelegramBot(token, {
   polling: true
 });
 
-const keyboard =[
-  [{text: 'A',
-    callback_data: 'A'
-},
-  {text: 'B',
-    callback_data: 'B'
-},
-  {text: 'C',
-    callback_data: 'C'
-}],
-  [{text: 'D',
-    callback_data: 'D'
-},
-  {text: 'E',
-    callback_data: 'E'
-},
-  {text: 'F',
-    callback_data: 'F'
-}],
-  [{text: 'G',
-    callback_data: 'G'
-},
-  {text: 'H',
-    callback_data: 'H'
-}]
+const keyboard = [
+  [{
+      text: 'A',
+      callback_data: 'A'
+    },
+    {
+      text: 'B',
+      callback_data: 'B'
+    },
+    {
+      text: 'C',
+      callback_data: 'C'
+    }
+  ],
+  [{
+      text: 'D',
+      callback_data: 'D'
+    },
+    {
+      text: 'E',
+      callback_data: 'E'
+    },
+    {
+      text: 'F',
+      callback_data: 'F'
+    }
+  ],
+  [{
+      text: 'G',
+      callback_data: 'G'
+    },
+    {
+      text: 'H',
+      callback_data: 'H'
+    }
+  ]
 ];
+
+bot.on('callback_query', query => {
+  const {
+    chat,
+    message_id,
+    text
+  } = query.message
+
+  switch (query.data) {
+    case 'A':
+      bot.forwardMessage(chat.id, chat.id, message_id)
+      break
+  }
+})
 //оплата за проезд
 bot.onText(/(.+)/, function (msg, match) {
   let chatId = msg.chat.id;
@@ -46,5 +71,9 @@ bot.onText(/(.+)/, function (msg, match) {
   const ct = curTime.toString().substring(4, 24);
 
 
-  bot.sendMessage(chatId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} ${a}${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
+  bot.sendMessage(chatId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} ${a}${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`, {
+    replymarkup: {
+      keyboard
+    }
+  });
 });
