@@ -33,7 +33,7 @@ bot.onText(/(.+)/, function (msg, match) {
   const curTime = new Date();
   const ct = curTime.toString().substring(4, 24);
   reply_markup: {
-    keyboard: [
+    one_time_keyboard: [
       [A, B, C],
       [D, E, F],
       [G, H],
