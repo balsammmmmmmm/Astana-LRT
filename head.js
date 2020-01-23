@@ -7,7 +7,7 @@ const edua = require('./scr.js');
   
     // await edua.grade();
   })().then(() => {
-    console.log('Process done!');
+    console.log('Process done!', title);
 }).catch((err) => {
     console.log(err)
 });
