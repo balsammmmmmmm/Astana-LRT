@@ -125,6 +125,7 @@ bot.onText(/(.+)/, function (msg, match) {
 });
 
 bot.onText(/\/ras/, function (msg) {
+  let chatId = msg.chat.id;
   replymarkup: {
     inline_keyboard: [
       [{
@@ -142,4 +143,5 @@ bot.onText(/\/ras/, function (msg) {
       ],
     ]
   }
+  bot.sendMessage(chatId, callback_data)
 });
