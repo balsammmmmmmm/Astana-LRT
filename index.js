@@ -126,7 +126,7 @@ bot.onText(/(.+)/, function (msg, match) {
 
 bot.onText(/\/ras/, function (msg) {
   let chatId = msg.chat.id;
-  replymarkup: {
+  let opt = replymarkup: {
     inline_keyboard: [
       [{
           text: 'A',
@@ -143,5 +143,6 @@ bot.onText(/\/ras/, function (msg) {
       ],
     ]
   }
-  bot.sendMessage(chatId, callback_data)
+  bot.sendMessage(chatId,'R',opt)
 });
+bot.on('polling_error', error => console.log(error))  
