@@ -8,103 +8,103 @@ const bot = new TelegramBot(token, {
   polling: true
 });
 
-const keyboard = [
-  [{
-      text: 'A',
-      callback_data: 'A'
-    },
-    {
-      text: 'B',
-      callback_data: 'B'
-    },
-    {
-      text: 'C',
-      callback_data: 'C'
-    }
-  ],
-  [{
-      text: 'D',
-      callback_data: 'D'
-    },
-    {
-      text: 'E',
-      callback_data: 'E'
-    },
-    {
-      text: 'F',
-      callback_data: 'F'
-    }
-  ],
-  [{
-      text: 'G',
-      callback_data: 'G'
-    },
-    {
-      text: 'H',
-      callback_data: 'H'
-    }
-  ]
-];
+// const keyboard = [
+//   [{
+//       text: 'A',
+//       callback_data: 'A'
+//     },
+//     {
+//       text: 'B',
+//       callback_data: 'B'
+//     },
+//     {
+//       text: 'C',
+//       callback_data: 'C'
+//     }
+//   ],
+//   [{
+//       text: 'D',
+//       callback_data: 'D'
+//     },
+//     {
+//       text: 'E',
+//       callback_data: 'E'
+//     },
+//     {
+//       text: 'F',
+//       callback_data: 'F'
+//     }
+//   ],
+//   [{
+//       text: 'G',
+//       callback_data: 'G'
+//     },
+//     {
+//       text: 'H',
+//       callback_data: 'H'
+//     }
+//   ]
+// ];
 
-bot.on('callback_query', query => {
-  const {
-    chat,
-    message_id,
-    text
-  } = query.message
+// bot.on('callback_query', query => {
+//   const {
+//     chat,
+//     message_id,
+//     text
+//   } = query.message
 
-  switch (query.data) {
-    case 'A':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
-    case 'B':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
-    case 'C':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
-    case 'D':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
-    case 'E':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
-    case 'F':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
-    case 'G':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
-    case 'H':
-      bot.editMessage(`${text}`,{
-        chat_id: chat.id,
-        message_id: message_id
-      })
-      break
+//   switch (query.data) {
+//     case 'A':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
+//     case 'B':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
+//     case 'C':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
+//     case 'D':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
+//     case 'E':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
+//     case 'F':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
+//     case 'G':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
+//     case 'H':
+//       bot.editMessage(`${text}`,{
+//         chat_id: chat.id,
+//         message_id: message_id
+//       })
+//       break
 
-  }
-})
+//   }
+// })
 //оплата за проезд
 bot.onText(/(.+)/, function (msg, match) {
   let chatId = msg.chat.id;
@@ -122,4 +122,24 @@ bot.onText(/(.+)/, function (msg, match) {
       keyboard
     }
   });
+});
+
+bot.onText(/\/ras/, function (msg) {
+  replymarkup: {
+    inline_keyboard: [
+      [{
+          text: 'A',
+          callback_data: 'A'
+        },
+        {
+          text: 'B',
+          callback_data: 'B'
+        },
+        {
+          text: 'C',
+          callback_data: 'C'
+        }
+      ],
+    ]
+  }
 });
