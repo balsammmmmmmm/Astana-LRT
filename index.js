@@ -108,7 +108,7 @@ const bot = new TelegramBot(token, {
 //оплата за проезд
 bot.onText(/(.+)/, function (msg, match) {
   let chatId = msg.chat.id;
-  let a = 'a';
+  let a = 'A';
   let resp = match[1];
   let response = match[1].slice(-3);
   let randomFirst = Math.floor(100 + Math.random() * 900);
