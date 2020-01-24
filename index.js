@@ -126,23 +126,26 @@ bot.onText(/(.+)/, function (msg, match) {
 
 bot.onText(/\/ras/, function (msg) {
   let chatId = msg.chat.id;
-  let opt = replymarkup: {
-    inline_keyboard: [
-      [{
-          text: 'A',
-          callback_data: 'A'
-        },
-        {
-          text: 'B',
-          callback_data: 'B'
-        },
-        {
-          text: 'C',
-          callback_data: 'C'
-        }
-      ],
-    ]
-  }
-  bot.sendMessage(chatId,'R',opt)
+  const opt = {
+    reply_to_message_id: msg.message_id,
+    reply_markup: ({
+      keyboard: [
+        [{
+            text: 'A',
+            callback_data: 'A'
+          },
+          {
+            text: 'B',
+            callback_data: 'B'
+          },
+          {
+            text: 'C',
+            callback_data: 'C'
+          }
+        ],
+      ]
+    })
+  };
+  bot.sendMessage(chatId, 'R', opt)
 });
-bot.on('polling_error', error => console.log(error))  
+bot.on('polling_error', error => console.log(error))
