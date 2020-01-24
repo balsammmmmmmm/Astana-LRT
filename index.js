@@ -120,28 +120,28 @@ bot.onText(/(.+)/, function (msg, match) {
   bot.sendMessage(chatId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} ${a}${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
 });
 
-// bot.onText(/\/ras/, function (msg) {
-//   let chatId = msg.chat.id;
-//   const opt = {
-//     reply_to_message_id: msg.message_id,
-//     reply_markup: ({
-//       keyboard: [
-//         [{
-//             text: 'A',
-//             callback_data: 'A'
-//           },
-//           {
-//             text: 'B',
-//             callback_data: 'B'
-//           },
-//           {
-//             text: 'C',
-//             callback_data: 'C'
-//           }
-//         ],
-//       ]
-//     })
-//   };
-//   bot.sendMessage(chatId, 'R', opt)
-// });
-// bot.on('polling_error', error => console.log(error))
+bot.onText(/\/ras/, function (msg) {
+  let chatId = msg.chat.id;
+  const opt = {
+    reply_to_message_id: msg.message_id,
+    reply_markup: ({
+      keyboard: [
+        [{
+            text: 'A',
+            callback_data: 'A'
+          },
+          {
+            text: 'B',
+            callback_data: 'B'
+          },
+          {
+            text: 'C',
+            callback_data: 'C'
+          }
+        ],
+      ]
+    })
+  };
+  bot.sendMessage(chatId, 'R', opt)
+});
+bot.on('polling_error', error => console.log(error))
