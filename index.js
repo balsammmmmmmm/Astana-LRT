@@ -1,147 +1,57 @@
-require('http').createServer().listen(process.env.PORT || 5000).on('request', function (req, res) {
-  res.end('');
-});
-process.env["NTBA_FIX_319"] = 1;
-const TelegramBot = require('node-telegram-bot-api');
-const token = '906646620:AAHXBYRUtBgPMm2UYNquCOqv3HGhj4LFdMM';
-const bot = new TelegramBot(token, {
-  polling: true
-});
+const puppeteer = require('puppeteer');
+const USER_NAME = '020924550859';
+const PASSWORD = 'Ch@rlyCharly2002lool';
+const PLATONUS = 'https://edu.enu.kz/';
+const PLATONUS_GRADES = 'https://edu.enu.kz/current_progress_gradebook_student?studentID=74688&year=2020&term=1';
 
-// const keyboard = [
-//   [{
-//       text: 'A',
-//       callback_data: 'A'
-//     },
-//     {
-//       text: 'B',
-//       callback_data: 'B'
-//     },
-//     {
-//       text: 'C',
-//       callback_data: 'C'
-//     }
-//   ],
-//   [{
-//       text: 'D',
-//       callback_data: 'D'
-//     },
-//     {
-//       text: 'E',
-//       callback_data: 'E'
-//     },
-//     {
-//       text: 'F',
-//       callback_data: 'F'
-//     }
-//   ],
-//   [{
-//       text: 'G',
-//       callback_data: 'G'
-//     },
-//     {
-//       text: 'H',
-//       callback_data: 'H'
-//     }
-//   ]
-// ];
+const button = document.getElementsByClassName('.btn');
+const info = document.getElementsByClassName('.info');
 
-// bot.on('callback_query', query => {
-//   const {
-//     chat,
-//     message_id,
-//     text
-//   } = query.message
-
-//   switch (query.data) {
-//     case 'A':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-//     case 'B':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-//     case 'C':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-//     case 'D':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-//     case 'E':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-//     case 'F':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-//     case 'G':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-//     case 'H':
-//       bot.editMessage(`${text}`,{
-//         chat_id: chat.id,
-//         message_id: message_id
-//       })
-//       break
-
-//   }
-// })
-//оплата за проезд
-bot.onText(/(.+)/, function (msg, match) {
-  let chatId = msg.chat.id;
-  let a = 'A';
-  let resp = match[1];
-  let response = match[1].slice(-3);
-  let randomFirst = Math.floor(100 + Math.random() * 900);
-  let randomSecond = Math.floor(1000 + Math.random() * 9000);
-  const curTime = new Date();
-  const ct = curTime.toString().substring(4, 24);
-
-
-  bot.sendMessage(chatId, `БИЛЕТ: 0${randomFirst}:38:${randomSecond}\nСУММА: 90 ТГ.\nДата: ${ct}\nТранспорт: ${resp} ${a}${response}\nТЕЛ: 77769097977\nТРАНЗАКЦИЯ: 33853${randomSecond}\nТОО АСТАНА LRT\nhttps://smsbus.kz/cd.jsp?id=00${randomFirst}38${randomSecond}`);
-});
-
-bot.onText(/\/ras/, function (msg) {
-  let chatId = msg.chat.id;
-  const opt = {
-    reply_to_message_id: msg.message_id,
-    reply_markup: ({
-      keyboard: [
-        [{
-            text: 'A',
-            callback_data: 'A'
-          },
-          {
-            text: 'B',
-            callback_data: 'B'
-          },
-          {
-            text: 'C',
-            callback_data: 'C'
-          }
+async function login() {
+    const browser = await puppeteer.launch({
+        headless: false,
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-sch-usage',
+            '--single-process'
         ],
-      ]
-    })
-  };
-  bot.sendMessage(chatId, 'R', opt)
-});
-bot.on('polling_error', error => console.log(error))
+    });
+    const page = await browser.newPage();
+    console.log("New page++")
+    info.textContent = "New page++"
+    await page.goto(PLATONUS, {
+        waitUntil: 'networkidle2'
+    });
+    await page.waitFor(3000);
+    console.log("Site loaded")
+    info.textContent = "Site loaded"
+    await page.type('input[name = "iin"]', USER_NAME);
+    await page.type('input[name = "password"]', PASSWORD);
+    let loginButton = await page.$x("//button[contains(text(), 'Кіру')]");
+    await loginButton[0].click();
+    console.log("Enter clicked")
+    info.textContent = "Enter clicked"
+    await page.waitFor(2000);
+    await page.goto(PLATONUS_GRADES, {
+        waitUntil: 'networkidle2'
+    });
+    await page.waitFor(3000);
+    console.log("grades loaded")
+    info.textContent = "grades loaded"
+
+    await page.screenshot({
+        path: `Grades.png`,
+        fullPage: true
+    });
+    console.log("screenshot taken")
+    info.textContent = "screenshot taken"
+    await browser.close();
+    console.log("browser closed")
+    info.textContent = "browser closed"
+
+};
+button.onclick = function () {
+    alert("lol")
+    login();
+}
